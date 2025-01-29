@@ -1,0 +1,24 @@
+{% comment %} Add this to the part of the footer where you want the trigger to show up {% endcomment %}
+<div class="footer-region">
+	<nav class="region">
+		<ul class="HorizontalList HorizontalList--spacingLoose hidden-pocket hidden-lap">
+			{% if region_selector %}
+				<li class="region-tem">
+					<modal-opener class="no-js-hidden" data-modal="#region-modal-popup">
+						<button type="button" class="btn-region" data-action="open-modal" aria-controls="modal-region-selector">
+							{% comment %} {{ currentCountryButtonLabel }} {% endcomment %}
+							<span class=country-flag><img src="{{ country_flag | asset_url }}" alt="" loading="lazy" /></span>
+							<span class=country-name>{{ country_label }}</span>
+							{%- render 'icon' with 'select-arrow' -%}
+						</button>
+					</modal-opener>
+				</li>
+			{% endif %}
+			{% if localization_form != blank %}
+				<li class="region-tem">
+					{{ localization_form }}
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+</div>

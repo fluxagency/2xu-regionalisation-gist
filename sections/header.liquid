@@ -1,0 +1,14 @@
+{% comment %} If you want to add it to the header add this to the `header.liquid` file {% endcomment %}
+<li class="mobile-link-item region-tem">
+	<modal-opener class="no-js-hidden" data-modal="#region-modal-popup">
+		<button type="button" class="btn-region" data-action="open-modal" aria-controls="modal-region-selector">
+			<div class="country-wrapper">
+				<span class=country-flag><img src="{{ country_flag | asset_url }}" alt="" loading="lazy" /></span>
+				<span class=country-name>{{ country_label }}</span>
+			</div>
+			<svg class="icon-select-arrow" viewBox="0 0 19 12">
+				<polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+			</svg>
+		</button>
+	</modal-opener>
+</li>
